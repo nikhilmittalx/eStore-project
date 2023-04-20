@@ -43,7 +43,7 @@ app.use((req, res) => {
   });
 });
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URL ,{family:4})
   .then(() => {
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {
