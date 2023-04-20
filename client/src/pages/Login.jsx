@@ -8,20 +8,20 @@ import { login } from '../store/auth-actions';
 const Login = () => {
   const dispatch = useDispatch();
   const auth = useSelector((store) => store.auth);
-  const usernameRef = useRef();
+  const emailRef = useRef();
   const passwordRef = useRef();
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    const username = usernameRef.current.value;
+    const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    if (!password.trim() || !username.trim()) return;
+    if (!password.trim() || !email.trim()) return;
     dispatch(
       login({
-        username,
+        email,
         password,
       })
     );
-    usernameRef.current.value = '';
+    emailRef.current.value = '';
     passwordRef.current.value = '';
   };
   return (
@@ -35,8 +35,8 @@ const Login = () => {
         <input
           className='p-2 mb-4 border-2 rounded focus:outline-none'
           type='text'
-          placeholder='Username'
-          ref={usernameRef}
+          placeholder='Email'
+          ref={emailRef}
         />
         <input
           className='p-2 mb-4 border-2 rounded focus:outline-none'

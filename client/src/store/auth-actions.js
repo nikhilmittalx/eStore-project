@@ -1,11 +1,11 @@
 import { loginStart, loginSuccess, loginFailure, registerStart, registerSuccess, registerFailure } from './auth-slice';
 import { publicRequest } from '../request-methods';
 
-export const login = (user) => {
+export const login = ({email, password}) => {
   return async (dispatch) => {
     dispatch(loginStart());
     try {
-      const response = await publicRequest.post('/auth/login', user);
+      const response = await publicRequest.post('/auth/login', {email, password});
       dispatch(loginSuccess(response.data));
     } catch (err) {
       dispatch(loginFailure());

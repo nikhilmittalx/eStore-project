@@ -30,7 +30,8 @@ const App = () => {
       <Route path='/orders'>
         <Orders />
       </Route>
-      <Route path='/login'>{user ? <Redirect to='/' /> : <Login />}</Route>
+      <Route path='/login'>{<Login />}</Route>
+      {/* <Route path='/login'>{user ? <Redirect to='/' /> : <Login />}</Route> */}
       <Route path='/signup'>
         <Signup />
       </Route>
