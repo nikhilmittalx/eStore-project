@@ -42,7 +42,8 @@ const Navbar = () => {
         )
         }
         
-        <Link to='/cart'>
+        {user1 ? (
+          <Link to='/cart'>
           <Badge
             badgeContent={totalQuantity}
             color='primary'
@@ -51,6 +52,8 @@ const Navbar = () => {
             <ShoppingCart />
           </Badge>
         </Link>
+        ) : (null)}
+        
       </div>
     </nav>
   );
