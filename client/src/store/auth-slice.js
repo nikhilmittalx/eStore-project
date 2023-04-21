@@ -33,9 +33,23 @@ const authSlice = createSlice({
       state.error = true;
     },
 
+    logoutStart(state) {
+      state.isFetching = true;
+    },
+    logoutSuccess(state, action) {
+      state.isFetching = false;
+      state.currentUser = null;
+      state.message = action.payload;
+    },
+    logoutFailure(state) {
+      state.isFetching = false;
+      state.error = true;
+    },
+
+
   }
 });
 
-export const { loginStart, loginSuccess, loginFailure, registerStart, registerSuccess, registerFailure } = authSlice.actions;
+export const { loginStart, loginSuccess, loginFailure, registerStart, registerSuccess, registerFailure, logoutStart, logoutSuccess, logoutFailure } = authSlice.actions;
 
 export default authSlice;

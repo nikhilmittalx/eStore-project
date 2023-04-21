@@ -16,6 +16,10 @@ const ShoppingCart = () => {
   const history = useHistory();
   const cart = useSelector((store) => store.cart);
 
+  let totalAmount = 0;
+  cart.products.map((p)=> totalAmount+=(p.quantity*p.price))
+  let totalQuantity = 0;
+  cart.products.map((p)=> totalQuantity+=(p.quantity))
   const continueShoppingClickHandler = () => {
     history.goBack();
   };
@@ -56,7 +60,8 @@ const ShoppingCart = () => {
           </div>
           <div className='flex'>
             <p className='mr-4 cursor-pointer'>
-              Shopping Bag ({cart.totalQantity})
+              Shopping Bag ({totalQuantity})
+              {/* ({cart.products && cart.products.length}) */}
             </p>
             {/* <a className='underline cursor-pointer'>Your Wishlist (0)</a> */}
           </div>
@@ -88,7 +93,10 @@ const ShoppingCart = () => {
               <h1 className='uppercase text-4xl mb-8'>order summary</h1>
               <div className='flex justify-between mb-8'>
                 <span className='capitalize'>subtotal</span>
-                <span>$ {cart.totalPrice}</span>
+                <span>
+                {/* $ {cart.totalPrice} */}
+                {totalAmount}
+                </span>
               </div>
               <div className='flex justify-between mb-8'>
                 <span className='capitalize'>estimated shipping</span>
@@ -100,7 +108,9 @@ const ShoppingCart = () => {
               </div>
               <div className='flex justify-between mb-8'>
                 <span className='capitalize font-bold text-2xl'>Total</span>
-                <span className='font-bold text-2xl'>$ {cart.totalPrice}</span>
+                <span className='font-bold text-2xl'>
+                  {totalAmount}
+                </span>
               </div>
             </div>
           </div>

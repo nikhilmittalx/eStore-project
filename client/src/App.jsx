@@ -30,11 +30,12 @@ const App = () => {
       <Route path='/orders'>
         <Orders />
       </Route>
-      <Route path='/login'>{<Login />}</Route>
-      {/* <Route path='/login'>{user ? <Redirect to='/' /> : <Login />}</Route> */}
-      <Route path='/signup'>
+      {/* <Route path='/login'>{<Login />}</Route> */}
+      <Route path='/login'>{user ? <Redirect to='/' /> : <Login />}</Route>
+      <Route path='/signup'>{user ? <Redirect to='/' /> : <Signup />}</Route>
+      {/* <Route path='/signup'>
         <Signup />
-      </Route>
+      </Route> */}
     </Switch>
   );
 };

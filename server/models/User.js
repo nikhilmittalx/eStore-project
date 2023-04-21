@@ -32,36 +32,35 @@ const userSchema = new Schema(
 }
 );
 
-// userSchema.pre("save", async function (next) {
-//   if (!this.isModified("password")) {
-//       next();
-//   }
-//   else {
-//       console.log(this.password, "password hash")
-//       this.password = await bcrypt.hash(this.password, 10)
-//       next();
-//   }
-// })
-
-
-userSchema.pre("save", function (next) {
-  if (this.password && this.password.length > 0) {
-    this.salt = new Buffer(crypto.randomBytes(16).toString("base64"), "base64");
-    this.password = this.hashPassword(this.password);
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+      next();
   }
-  next();
-});
-
-
-userSchema.methods.hashPassword = function (password) {
-  if (this.salt && password) {
-    return crypto
-      .pbkdf2Sync(password, this.salt, 10000, 64, "sha512")
-      .toString("base64");
-  } else {
-    console.log("hashPassword",password)
+  else {
+      console.log(this.password, "password hash")
+      this.password = await bcrypt.hash(this.password, 10)
   }
-}
+})
+
+
+// userSchema.pre("save", function (next) {
+//   if (this.password && this.password.length > 0) {
+//     this.salt = new Buffer(crypto.randomBytes(16).toString("base64"), "base64");
+//     this.password = this.hashPassword(this.password);
+//   }
+//   next();
+// });
+
+
+// userSchema.methods.hashPassword = function (password) {
+//   if (this.salt && password) {
+//     return crypto
+//       .pbkdf2Sync(password, this.salt, 10000, 64, "sha512")
+//       .toString("base64");
+//   } else {
+//     console.log("hashPassword",password)
+//   }
+// }
 
 
 // ye ni chl rha

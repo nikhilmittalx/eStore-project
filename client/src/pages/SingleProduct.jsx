@@ -70,9 +70,7 @@ const SingleProduct = () => {
             <div className='flex items-center justify-start'>
               <span
                 className='cursor-pointer'
-                onClick={() => {
-                  quantity >= 1 && setQuantity(quantity--);
-                }}
+                onClick={() => { quantity >= 1 && setQuantity(quantity--); }}
               >
                 <Remove />
               </span>

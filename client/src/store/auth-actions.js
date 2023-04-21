@@ -1,4 +1,4 @@
-import { loginStart, loginSuccess, loginFailure, registerStart, registerSuccess, registerFailure } from './auth-slice';
+import { loginStart, loginSuccess, loginFailure, registerStart, registerSuccess, registerFailure, logoutStart, logoutSuccess, logoutFailure } from './auth-slice';
 import { publicRequest } from '../request-methods';
 
 export const login = ({email, password}) => {
@@ -20,6 +20,17 @@ export const register = ({firstname, lastname, username, email, password, passwo
       dispatch(registerSuccess(response.data));
     } catch (err) {
       dispatch(registerFailure());
+    }
+  };
+};
+export const logout = () => {
+  return async (dispatch) => {
+    dispatch(logoutStart());
+    try {
+      const response = await publicRequest.get('/auth/logout');
+      dispatch(logoutSuccess(response.message));
+    } catch (err) {
+      dispatch(logoutFailure());
     }
   };
 };

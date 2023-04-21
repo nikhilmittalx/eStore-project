@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { validationResult } = require('express-validator');
-const { createAccessToken } = require('../service/authService/createToken')
+// const { createAccessToken } = require('../service/authService/createToken')
 
 const User = require('../models/User');
 
@@ -34,14 +34,14 @@ module.exports.register = async (req, res, next) => {
 
     // console.log(user1, "registered user");
 
-    const tokenObject = {
-      id: user1._id,
-      email: email,
-    }
+    // const tokenObject = {
+    //   id: user1._id,
+    //   email: email,
+    // }
 
     // console.log(tokenObject, "token");
-    let token = await createAccessToken(tokenObject, 1440);
-    // const token = user1.getJWTToken();
+    // let token = await createAccessToken(tokenObject, 1440);
+    const token = user1.getJWTToken();
 
     const options = {
         httpOnly: true,
@@ -111,13 +111,13 @@ module.exports.login = async (req, res, next) => {
   // const token = jwt.sign({_id:user._id}, process.env.JWT_SECRET, {
   //     expiresIn:process.env.JWT_EXPIRE
   // })
-  const tokenObject = {
-    id: user._id,
-    email: email,
-  }
+  // const tokenObject = {
+  //   id: user._id,
+  //   email: email,
+  // }
 
-  let token = await createAccessToken(tokenObject);
-  // const token = user.getJWTToken();
+  // let token = await createAccessToken(tokenObject);
+  const token = user.getJWTToken();
   const options = {
     httpOnly: true,
     expires: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000)
@@ -170,3 +170,20 @@ module.exports.login = async (req, res, next) => {
   //     res.status(500).json(error);
   //   });
 };
+
+
+module.exports.logout = async (req, res, next) => {
+  try {
+    res.cookie("token", null, {
+      expires: new Date(Date.now()),
+      httpOnly: true,
+    })
+    res.status(200).json({
+        success: true,
+        message: "logout"
+    })
+  } catch (error) {
+    res.status(500).json(error);
+  }
+  
+}

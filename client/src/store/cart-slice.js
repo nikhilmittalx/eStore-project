@@ -40,8 +40,31 @@ const cartSlice = createSlice({
       state.totalQantity += newProduct.quantity;
       state.totalPrice += newProduct.price * newProduct.quantity;
     },
+
+    subProduct(state, action) {
+      const product = state.products.find(p => p._id === action.payload.product._id);
+      if (product.quantity === 1) {
+        state.products.splice(state.products.indexOf(product), 1);
+      }
+      else {
+        product.quantity--;
+      }
+      state.totalQantity --;
+      state.totalPrice -= product.price;
+    },
+    incProduct(state, action) {
+      const product = state.products.find(p => p._id === action.payload.product._id);
+      // if (product.quantity === 1) {
+      //   state.products.splice(state.products.indexOf(product), 1);
+      // }
+      // else {
+        product.quantity++;
+      // }
+      state.totalQantity ++;
+      state.totalPrice += product.price;
+    }
   }
 });
 
-export const { addProduct } = cartSlice.actions;
+export const { addProduct, subProduct, incProduct } = cartSlice.actions;
 export default cartSlice;

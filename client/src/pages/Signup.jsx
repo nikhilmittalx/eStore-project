@@ -3,28 +3,31 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { register } from '../store/auth-actions';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 const Signup = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const auth = useSelector((store) => store.auth);
-  const firstnameRef = useRef();
-  const lastnameRef = useRef();
+  // const firstnameRef = useRef();
+  // const lastnameRef = useRef();
   const usernameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    const firstname = firstnameRef.current.value;
-    const lastname = lastnameRef.current.value;
+    // const firstname = firstnameRef.current.value;
+    // const lastname = lastnameRef.current.value;
     const username = usernameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const passwordConfirm = passwordConfirmRef.current.value;
     if (!password.trim() || !username.trim()) return;
-    dispatch(register({firstname, lastname, username, email, password, passwordConfirm}));
-    firstnameRef.current.value='';
-    lastnameRef.current.value='';
+    dispatch(register({username, email, password, passwordConfirm}));
+    history.push("/");
+    // firstnameRef.current.value='';
+    // lastnameRef.current.value='';
     usernameRef.current.value='';
     emailRef.current.value='';
     passwordRef.current.value='';
@@ -38,7 +41,7 @@ const Signup = () => {
         className='border bg-white p-6 flex flex-col items-center min-w-[17rem] sm:min-w-[22rem] md:min-w-[35rem] max-w-[25rem]'
       >
         <h1 className='uppercase text-xl mb-4 font-bold'>Sign up</h1>
-        <div className='grid gap-4 md:grid-cols-2 mb-4'>
+        {/* <div className='grid gap-4 md:grid-cols-2 mb-4'>
           <input
             className='block p-2 border-2 rounded focus:outline-none'
             type='text'
@@ -51,7 +54,7 @@ const Signup = () => {
             placeholder='Last Name'
             ref={lastnameRef}
           />
-        </div>
+        </div> */}
         <div className='grid gap-4 md:grid-cols-2 mb-4'>
           <input
             className='block p-2 border-2 rounded focus:outline-none'
