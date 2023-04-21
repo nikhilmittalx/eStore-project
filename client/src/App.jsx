@@ -17,7 +17,6 @@ const App = () => {
   const user = useSelector((store) => store.auth.currentUser);
   return (
     <Routes>
-    <Navbar />
     <Switch>
       <Route exact path='/'>
         <Home />
