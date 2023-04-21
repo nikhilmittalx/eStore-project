@@ -6,19 +6,13 @@ const Footer = () => {
   return (
     <footer className='p-8 grid gap-x-16 gap-y-4 md:grid-cols-3'>
       <div>
-        <h1 className='font-bold text-3xl uppercase mb-4 tracking-wider'>
-          <a href=''>Hein.</a>
-        </h1>
-        <p className='text-justify'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione
-          recusandae nobis sunt aliquid tempore vitae sapiente ea voluptatibus
-          ab repellat asperiores eius cum laboriosam facilis eos, maiores
-          deleniti nemo consequuntur assumenda sed consectetur culpa voluptatum
-          quisquam quibusdam? Saepe, soluta quibusdam.
-        </p>
-      </div>
-      <div>
-        <h2 className='font-bold text-2xl mb-4 tracking-wider'>Useful Links</h2>
+        <div className='flex flex-col'>
+          <div className='h-16 w-16 border-solid border-black border-2 rounded-full '></div>
+          <div className='flex'>
+            
+          </div>
+        </div>
+        {/* <h2 className='font-bold text-2xl mb-4 tracking-wider'>Useful Links</h2>
         <div className='grid grid-cols-2'>
           <ul>
             <li>
@@ -48,11 +42,23 @@ const Footer = () => {
               <a href=''>Terms</a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
       <div>
-        <h2 className='font-bold text-2xl mb-4 tracking-wider'>Contact</h2>
-        <ul>
+        <h1 className='font-bold text-3xl uppercase mb-4 tracking-wider'>
+          <a href=''>Hein.</a>
+        </h1>
+        <p className='text-justify'>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione
+          recusandae nobis sunt aliquid tempore vitae sapiente ea voluptatibus
+          ab repellat asperiores eius cum laboriosam facilis eos, maiores
+          deleniti nemo consequuntur assumenda sed consectetur culpa voluptatum
+          quisquam quibusdam? Saepe, soluta quibusdam.
+        </p>
+      </div>
+      <div>
+        {/* <h2 className='font-bold text-2xl mb-4 tracking-wider'>Contact</h2> */}
+        {/* <ul>
           <li>
             <Place className='mr-4' />
             <span>Cairo, Egypt</span>
@@ -65,7 +71,7 @@ const Footer = () => {
             <MailOutline className='mr-4' />
             <span>contact@hein.com</span>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </footer>
   );

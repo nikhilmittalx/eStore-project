@@ -10,6 +10,7 @@ import Orders from './pages/Orders';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import Team from './../src/components/Team/Team';
 
 const App = () => {
   const user = useSelector((store) => store.auth.currentUser);
@@ -36,6 +37,9 @@ const App = () => {
       {/* <Route path='/signup'>
         <Signup />
       </Route> */}
+      <Route path='/aboutus'>
+        <Team />
+      </Route>
     </Switch>
   );
 };
