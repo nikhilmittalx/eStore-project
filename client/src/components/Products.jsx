@@ -4,6 +4,9 @@ import { publicRequest } from '../request-methods';
 
 import Product from './Product';
 
+import '../pages/Style.css'
+
+
 const Products = ({ category, filter }) => {
   const [products, setProducts] = useState([]);
 
@@ -22,15 +25,24 @@ const Products = ({ category, filter }) => {
   }, []);
 
   return (
+<div>
+    <h2 className='homeHeading'>Featured Products</h2>
+   
+   <div className='container' id='container'>
     <section
-      className='pb-8 mx-8 grid gap-2 md:grid-cols-2 lg:grid-cols-4'
+      className='contain'
       id='products'
     >
+      {console.log(products)}
       {products.map((product) => (
-        <Product key={product._id} image={product.image} id={product._id} />
+       
+        <Product key={product._id} image={product.image} id={product._id} price={product.price}  title =  {product.title}/>
       ))}
     </section>
+    </div>
+    </div>
   );
+ 
 };
 
 export default Products;

@@ -1,10 +1,10 @@
 import React from 'react';
-
+import '../pages/Style.css'
 import Categorie from './Categorie';
 
 const Categories = () => {
   return (
-    <section className='p-8' id='categories'>
+    <section className='containCat' id='categories'>
       <div className='grid gap-2 md:grid-cols-3 mb-2'>
         <Categorie
           name='Clothes'

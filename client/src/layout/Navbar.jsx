@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <nav className='grid grid-cols-2 p-4 border-b font-semibold h-18'>
       <h1 className='font-bold text-3xl uppercase flex items-center justify-start px-4 tracking-wider'>
-      <Link to='/'>nikhil.</Link>
+      <Link to='/'>StyleZone</Link>
       </h1>
       <div className='flex justify-end items-center px-4 text-md md:text-lg'>
         <Link to='/aboutus' className='uppercase px-4 py-2'>
