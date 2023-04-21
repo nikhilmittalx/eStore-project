@@ -58,13 +58,13 @@ module.exports.getProducts = async (req, res) => {
   try {
     let products;
     if (newQuery) {
-      products = await Product.find({}, { image: 1 }).sort({ createdAt: -1 }).limit(8);
+      products = await Product.find().sort({ createdAt: -1 }).limit(8);
     } else if (categoryQuery) {
       products = await Product.find({
         category: categoryQuery
-      }, { image: 1 });
+      });
     } else {
-      products = await Product.find({}, { image: 1 });
+      products = await Product.find();
     }
     res.status(200).json(products);
   } catch (error) {

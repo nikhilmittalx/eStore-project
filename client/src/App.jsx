@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Routes ,Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import Home from './pages/Home';
@@ -9,11 +9,14 @@ import ShoppingCart from './pages/ShoppingCart';
 import Orders from './pages/Orders';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Navbar from './layout/Navbar';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 const App = () => {
   const user = useSelector((store) => store.auth.currentUser);
   return (
+    <Routes>
+    <Navbar />
     <Switch>
       <Route exact path='/'>
         <Home />
@@ -37,6 +40,7 @@ const App = () => {
         <Signup />
       </Route> */}
     </Switch>
+    </Routes>
   );
 };
 
