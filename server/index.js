@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-
+const cookieparser = require('cookie-parser')
 const userRoutes = require('./routes/user');
 const cartRoutes = require('./routes/cart');
 const orderRoutes = require('./routes/order');
@@ -19,7 +19,8 @@ app.use(cors());
 
 // Parse the body text
 app.use(bodyParser.json());
-
+// Parse Cookies
+app.use(cookieparser())
 // CORS
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator');
 // const { createAccessToken } = require('../service/authService/createToken')
 
 const User = require('../models/User');
+const { sendToken } = require('../middlewares/verifyToken');
 
 module.exports.register = async (req, res, next) => {
   try {
@@ -41,17 +42,17 @@ module.exports.register = async (req, res, next) => {
 
     // console.log(tokenObject, "token");
     // let token = await createAccessToken(tokenObject, 1440);
-    const token = user1.getJWTToken();
+    sendToken(user1 , 201 , res)
 
-    const options = {
-        httpOnly: true,
-        expires: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
-    }
-    res.status(201).cookie("token", token, options).json({
-      success: true,
-      user1,
-      token,
-    })
+    // const options = {
+    //     httpOnly: true,
+    //     expires: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
+    // }
+    // res.status(201).cookie("token", token, options).json({
+    //   success: true,
+    //   user1,
+    //   token,
+    // })
   } catch (error) {
     res.status(500).json({
       error: error
@@ -107,6 +108,7 @@ module.exports.login = async (req, res, next) => {
         .status(400)
         .json({ success: false, message: "Invalid email or password" });
   }
+  sendToken(user , 200 ,res);
 
   // const token = jwt.sign({_id:user._id}, process.env.JWT_SECRET, {
   //     expiresIn:process.env.JWT_EXPIRE
@@ -117,20 +119,20 @@ module.exports.login = async (req, res, next) => {
   // }
 
   // let token = await createAccessToken(tokenObject);
-  const token = user.getJWTToken();
-  const options = {
-    httpOnly: true,
-    expires: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000)
-  }
-  res.status(200).cookie("token", token, options).json({
-    success: true,
-    user,
-    token,
-    isAdmin: user.isAdmin
-  })
-    .catch(error => {
-      res.status(500).json(error);
-    });
+  // const token = user.getJWTToken();
+  // const options = {
+  //   httpOnly: true,
+  //   expires: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000)
+  // }
+  // res.status(200).cookie("token", token, options).json({
+  //   success: true,
+  //   user,
+  //   token,
+  //   isAdmin: user.isAdmin
+  // })
+  //   .catch(error => {
+  //     res.status(500).json(error);
+  //   });
 
 
   // const username = req.body.username;

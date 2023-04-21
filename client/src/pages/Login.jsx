@@ -47,10 +47,12 @@ const Login = () => {
         <button
           className='mb-4 bg-teal-700 text-white p-2 disabled:bg-teal-500 disabled:cursor-not-allowed'
           disabled={auth.isFetching}
+        
         >
           Login
         </button>
-        {auth.error && <p>Something went wrong. Please try later...</p>}
+        {auth.error? <p>Something went wrong. Please try later...</p> : null}
+       
         <Link to='/signup' className='capitalize underline mb-4'>
           create a new account
         </Link>

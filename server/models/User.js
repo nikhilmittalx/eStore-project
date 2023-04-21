@@ -64,10 +64,22 @@ userSchema.pre("save", async function (next) {
 
 
 // ye ni chl rha
-userSchema.methods.getJWTToken = function () {
-  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
-      expiresIn: process.env.JWT_EXPIRE,
+
+userSchema.methods.getJWTToken = function(){
+  //Creating a JWT token
+  //if a person get this process.env.JWT_SECRET then he can login into the account and also can genrate token
+  return jwt.sign({id: this._id} , process.env.JWT_SECRET_KEY,{
+      expiresIn:process.env.JWT_EXPIRE, //by expiresIn we can set a expire date of token after that the guy will logout itself
+  
   })
 }
+
+
+userSchema.methods.comparePassword = async function(enteredPassword){
+  return await bcrypt.compare(enteredPassword , this.password);
+};
+
+
+
 
 module.exports = mongoose.model('User', userSchema);
