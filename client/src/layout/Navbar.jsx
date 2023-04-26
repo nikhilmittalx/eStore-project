@@ -24,6 +24,11 @@ const Navbar = () => {
       <Link to='/'>StyleZone</Link>
       </h1>
       <div className='flex justify-end items-center px-4 text-md md:text-lg'>
+      {/* {user1 ?  user1.isAdmin ?  (
+          <Link to='/' className='uppercase px-4 py-2'>
+          Create A Product
+        </Link>
+        )  : (null) : " "} */}
         <Link to='/aboutus' className='uppercase px-4 py-2'>
           About Us
         </Link>
