@@ -9,12 +9,12 @@ const Product = ({ image, id , price ,title }) => {
   return (
     <figure
       className='prodDetails'
-      // onMouseEnter={() => {
-      //   setOverlayIsShown(true);
-      // }}
-      // onMouseLeave={() => {
-      //   setOverlayIsShown(false);
-      // }}
+      onMouseEnter={() => {
+        setOverlayIsShown(true);
+      }}
+      onMouseLeave={() => {
+        setOverlayIsShown(false);
+      }}
     >
       <img src={image} alt='' className='w- h-full object-cover' />
       {overlayIsShown && (
