@@ -96,15 +96,44 @@ const SingleProduct = () => {
 
             {user1 ? (
               <div>
+                <div>
+                {user1 ?  user1.user.isAdmin ?  (
+          <button
+                  onClick={""}
+                  className="my-2 uppercase hover:bg-teal-700 hover:text-white transition ease-out duration-500 border-teal-700 border rounded p-4">
+          Delete Item
+        </button>
+        )  : (null) : " "}
+                </div>
+
+
+                <div>
+
                 <button
                   onClick={addToCartHandler}
                   className="uppercase hover:bg-teal-700 hover:text-white transition ease-out duration-500 border-teal-700 border rounded p-4"
                 >
                   Add to cart
                 </button>
+                  </div>
+
+                  <div>
+                {user1 ?  user1.user.isAdmin ?  (
+          <button
+                  onClick={""}
+                  className="my-2 uppercase hover:bg-teal-700 hover:text-white transition ease-out duration-500 border-teal-700 border rounded p-4">
+          Update {""} Item 
+        </button>
+        )  : (null) : " "}
+                </div>
+
+
+
+
               </div>
             ) : (
               <div>
+
                 <button
                   onClick={toggleLoginToAdd}
                   className="uppercase hover:bg-teal-700 hover:text-white transition ease-out duration-500 border-teal-700 border rounded p-4"
