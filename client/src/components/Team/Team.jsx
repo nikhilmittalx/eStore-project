@@ -9,7 +9,7 @@ import Navbar from '../../layout/Navbar';
 const Team = () => {
 	return (
 		<>
-			<Announcement />
+			{/* <Announcement /> */}
 			<Navbar />
 			<div className={classes.main}>
 				<div className={classes.item}>
@@ -52,7 +52,7 @@ const Team = () => {
 					<img
 						className={classes.img}
 						id={classes.img_3}
-						src={Sapna}
+						src={Saurabh}
 						alt="Shally"
 					/>
 					{/* <span className={classes.position}>ThunderBolt</span> */}

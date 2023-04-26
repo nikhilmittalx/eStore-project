@@ -43,7 +43,7 @@ const SingleProduct = () => {
   }, []);
   return (
     <>
-      <Announcement />
+      {/* <Announcement /> */}
       <Navbar />
       <section className="p-8 grid md:grid-cols-2 gap-8">
         <div className="grow">
