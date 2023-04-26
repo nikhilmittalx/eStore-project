@@ -45,7 +45,7 @@ const ShoppingCart = () => {
   }, [stripeToken]);
   return (
     <>
-      <Announcement />
+      {/* <Announcement /> */}
       <Navbar />
       <section className='px-8 py-4'>
         <h1 className='uppercase mt-4 mb-8 text-4xl text-center'>your bag</h1>
