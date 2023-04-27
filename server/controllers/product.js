@@ -1,7 +1,20 @@
 const Product = require('../models/Product');
 
 module.exports.addProduct = async (req, res) => {
-  const newProduct = new Product(req.body);
+  const {title, description, image, category, size, color , price , inStock} = req.body;
+  const data = {
+    title:title,
+    description:description,
+    image:image,
+    category:category,
+    size:size,
+    color:color,
+    price:price,
+    inStock:inStock
+  }
+  let newProduct = await Product.create(data);
+  // const newProduct = new Product(req.body);
+
   try {
     const savedProduct = await newProduct.save();
     res.status(201).json({

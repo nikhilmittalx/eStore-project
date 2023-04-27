@@ -1,7 +1,7 @@
 import { loginStart, loginSuccess, loginFailure, registerStart, registerSuccess, registerFailure, logoutStart, logoutSuccess, logoutFailure  } from './auth-slice';
 import { registerProductFailure , registerProductSuccess , registerProductStart } from './admin-slice';
 
-import { publicRequest } from '../request-methods';
+import { publicRequest, userRequest } from '../request-methods';
 
 import axios from 'axios';
 
@@ -27,11 +27,12 @@ export const register = ({firstname, lastname, username, email, password, passwo
     }
   };
 };
-export const addAProduct = ({title, discription, image, category, size, color , price , inStock}) => {
+export const addAProduct = ({title, description, image, category, size, color , price , inStock}) => {
   return async (dispatch) => {
     dispatch(registerProductStart());
     try {
-      const response = await publicRequest.post('/products/admin/add', {title, discription, image, category, size, color , price , inStock});
+      const response = await userRequest.post('products/admin/add', {title, description, image, category, size, color , price , inStock});
+      // const response = await publicRequest.post('/products/admin/add', {title, discription, image, category, size, color , price , inStock});
       dispatch(registerProductSuccess(response.data));
     } catch (err) {
       dispatch(registerProductFailure());
