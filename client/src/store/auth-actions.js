@@ -2,7 +2,8 @@ import { loginStart, loginSuccess, loginFailure, registerStart, registerSuccess,
 import { registerProductFailure , registerProductSuccess , registerProductStart } from './admin-slice';
 
 import { publicRequest } from '../request-methods';
-import { userRequest } from '../request-methods';
+
+import axios from 'axios';
 
 export const login = ({email, password}) => {
   return async (dispatch) => {
@@ -30,7 +31,7 @@ export const addAProduct = ({title, discription, image, category, size, color , 
   return async (dispatch) => {
     dispatch(registerProductStart());
     try {
-      const response = await userRequest.post('/products/admin/add', {title, discription, image, category, size, color , price , inStock});
+      const response = await publicRequest.post('/products/admin/add', {title, discription, image, category, size, color , price , inStock});
       dispatch(registerProductSuccess(response.data));
     } catch (err) {
       dispatch(registerProductFailure());

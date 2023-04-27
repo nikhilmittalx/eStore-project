@@ -10,7 +10,7 @@ module.exports = {
         primary: {
           100:'#709dff',
           200:'#5651e5'
-        },
+        }
       },
       fontFamily: {
         urbanist: ["Urbanist", "sans-serif"],

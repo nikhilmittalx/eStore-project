@@ -17,7 +17,7 @@ const adminSlice = createSlice({
       state.isFetching = false;
       state.product = action.payload;
     },
-    registerProductFail(state) {
+    registerProductFailure(state) {
       state.isFetching = false;
       state.error = true;
     },
