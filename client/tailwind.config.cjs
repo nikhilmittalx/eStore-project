@@ -20,7 +20,8 @@ module.exports = {
       },
       backgroundImage: {
         login: "url('https://images.pexels.com/photos/2112648/pexels-photo-2112648.jpeg?auto=compress&cs=tinysrgb&w=600')",
-        
+        cp:"url('https://res.cloudinary.com/diyixgmes/image/upload/v1682574362/cover_hg0ci7.jpg')"
+
       }
     },
   },
