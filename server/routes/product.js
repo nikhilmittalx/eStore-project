@@ -6,7 +6,7 @@ const { verifyTokenAndAdmin } = require('../middlewares/verifyToken');
 const router = express.Router();
 
 // POST => /api/products
-router.post('/', verifyTokenAndAdmin, addProduct);
+router.post('/admin/add', addProduct);
 
 // PATCH => /api/products/:id
 router.patch('/:id', verifyTokenAndAdmin, updateProduct);

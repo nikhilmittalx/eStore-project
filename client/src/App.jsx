@@ -12,7 +12,7 @@ import Login from './pages/Login';
 import Navbar from './layout/Navbar';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import Team from './../src/components/Team/Team';
-
+import CreatProduct from './pages/CreateProduct';
 const App = () => {
   const user = useSelector((store) => store.auth.currentUser);
   return (
@@ -41,6 +41,9 @@ const App = () => {
       </Route> */}
       <Route path='/aboutus'>
         <Team />
+      </Route>
+      <Route path='/addAProduct'>
+        <CreatProduct />
       </Route>
     </Switch>
     </Routes>

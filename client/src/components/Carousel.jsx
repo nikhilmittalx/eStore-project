@@ -5,10 +5,10 @@ import { Link } from 'react-scroll';
 
 const CAROUSEL_DATA = [
   {
-    url: 'https://images.unsplash.com/photo-1523380744952-b7e00e6e2ffa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+    url: 'https://res.cloudinary.com/diyixgmes/image/upload/v1682525096/young-courier-correcting-cap-against-grey-wall_uj94f9.jpg',
   },
   {
-    url: 'https://images.unsplash.com/photo-1550995694-3f5f4a7e1bd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80',
+    url: 'https://res.cloudinary.com/diyixgmes/image/upload/v1682525089/mixed-race-black-woman-with-curly-hair-natural-warm-makeup-dark-skin-have-fun-stick-out-her-tongue_bgri6k.jpg',
   },
 ];
 const Carousel = () => {

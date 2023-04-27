@@ -57,7 +57,7 @@ const Navbar = () => {
       </h1>
       <div className='flex justify-end items-center px-4 text-md md:text-lg'>
       {user1 ?  user1.user.isAdmin ?  (
-          <Link to='/' className='uppercase px-4 py-2' onClick={() => setEditToggle(!editToggle)}>
+          <Link to='/addAProduct' className='uppercase px-4 py-2' onClick={() => setEditToggle(!editToggle)}>
           Create A Product
         </Link>
         )  : (null) : " "}
