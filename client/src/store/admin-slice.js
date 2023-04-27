@@ -22,6 +22,19 @@ const adminSlice = createSlice({
       state.error = true;
     },
 
+    deleteProductStart(state) {
+      state.isFetching = true;
+    },
+    deleteProductSuccess(state, action) {
+      state.isFetching = false;
+      state.message = action.payload;
+      // state.product = action.payload;
+    },
+    deleteProductFailure(state) {
+      state.isFetching = false;
+      state.error = true;
+    },
+
     
     
 
@@ -30,6 +43,6 @@ const adminSlice = createSlice({
   }
 });
 
-export const {  registerProductStart , registerProductSuccess , registerProductFailure } = adminSlice.actions;
+export const {  registerProductStart , registerProductSuccess , registerProductFailure, deleteProductStart , deleteProductSuccess , deleteProductFailure } = adminSlice.actions;
 
 export default adminSlice;

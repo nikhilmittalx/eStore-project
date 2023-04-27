@@ -1,5 +1,5 @@
 import { loginStart, loginSuccess, loginFailure, registerStart, registerSuccess, registerFailure, logoutStart, logoutSuccess, logoutFailure  } from './auth-slice';
-import { registerProductFailure , registerProductSuccess , registerProductStart } from './admin-slice';
+import { registerProductFailure , registerProductSuccess , registerProductStart, deleteProductStart , deleteProductSuccess , deleteProductFailure } from './admin-slice';
 
 import { publicRequest, userRequest } from '../request-methods';
 
@@ -36,6 +36,18 @@ export const addAProduct = ({title, description, image, category, size, color , 
       dispatch(registerProductSuccess(response.data));
     } catch (err) {
       dispatch(registerProductFailure());
+    }
+  };
+};
+export const deleteProduct = (id) => {
+  return async (dispatch) => {
+    dispatch(deleteProductStart());
+    try {
+      const response = await userRequest.delete(`products/admin/delete/${id}`);
+      // const response = await publicRequest.post('/products/admin/add', {title, discription, image, category, size, color , price , inStock});
+      dispatch(deleteProductSuccess(response.message));
+    } catch (err) {
+      dispatch(deleteProductFailure());
     }
   };
 };

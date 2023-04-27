@@ -47,7 +47,8 @@ module.exports.updateProduct = async (req, res) => {
 
 module.exports.deleteProduct = async (req, res) => {
   try {
-    await Product.findByIdAndDelete(req.params.id);
+    const product = await Product.findById(req.params.id);
+    product.deleteOne();
     res.status(200).json({
       message: "Product is deleted successfully."
     });

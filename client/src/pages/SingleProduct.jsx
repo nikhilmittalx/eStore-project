@@ -11,9 +11,12 @@ import Navbar from "../layout/Navbar";
 import Announcement from "../layout/Announcement";
 import Footer from "../layout/Footer";
 import Newsletter from "../components/Newsletter";
+import { deleteProduct } from "../store/auth-actions";
+import { useHistory } from 'react-router-dom';
 
 const SingleProduct = () => {
   const { id } = useParams();
+  const history = useHistory();
   const dispatch = useDispatch();
   const user1 = useSelector((store) => store.auth.currentUser);
   const [product, setProduct] = useState({});
@@ -41,6 +44,12 @@ const SingleProduct = () => {
   useEffect(() => {
     getProduct();
   }, []);
+
+  const deleteHandler = async() => {
+    console.log(id);
+    await dispatch(deleteProduct(id));
+    history.push("/");
+  }
   return (
     <>
       {/* <Announcement /> */}
@@ -99,7 +108,7 @@ const SingleProduct = () => {
                 <div>
                 {user1 ?  user1.user.isAdmin ?  (
           <button
-                  onClick={""}
+                  onClick={deleteHandler}
                   className="my-2 uppercase hover:bg-teal-700 hover:text-white transition ease-out duration-500 border-teal-700 border rounded p-4">
           Delete Item
         </button>

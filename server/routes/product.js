@@ -8,13 +8,14 @@ const router = express.Router();
 // POST => /api/products
 // router.post('/admin/add', addProduct);
 router.route("/admin/add").post(addProduct);
+router.route("/admin/delete/:id").delete(deleteProduct);
 
 
 // PATCH => /api/products/:id
 router.patch('/:id', verifyTokenAndAdmin, updateProduct);
 
 // DELETE => /api/products/:id
-router.delete('/:id', verifyTokenAndAdmin, deleteProduct);
+// router.delete('/:id', verifyTokenAndAdmin, deleteProduct);
 
 // GET => /api/products/:id
 router.get('/:id', getProduct);
