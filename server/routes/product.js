@@ -12,7 +12,7 @@ router.route("/admin/delete/:id").delete(deleteProduct);
 
 
 // PATCH => /api/products/:id
-router.patch('/:id', verifyTokenAndAdmin, updateProduct);
+router.route("/admin/update/:id").put(updateProduct);
 
 // DELETE => /api/products/:id
 // router.delete('/:id', verifyTokenAndAdmin, deleteProduct);

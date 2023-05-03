@@ -1,9 +1,9 @@
 import { loginStart, loginSuccess, loginFailure, registerStart, registerSuccess, registerFailure, logoutStart, logoutSuccess, logoutFailure  } from './auth-slice';
-import { registerProductFailure , registerProductSuccess , registerProductStart, deleteProductStart , deleteProductSuccess , deleteProductFailure } from './admin-slice';
+import { registerProductFailure , registerProductSuccess , registerProductStart, deleteProductStart , deleteProductSuccess , deleteProductFailure ,  updateProductFailure , updateProductStart , updateProductSuccess } from './admin-slice';
 
 import { publicRequest, userRequest } from '../request-methods';
 
-import axios from 'axios';
+
 
 export const login = ({email, password}) => {
   return async (dispatch) => {
@@ -27,11 +27,11 @@ export const register = ({firstname, lastname, username, email, password, passwo
     }
   };
 };
-export const addAProduct = ({title, description, image, category, size, color , price , inStock}) => {
+export const addAProduct = ({title, description, image, category, size , price , inStock}) => {
   return async (dispatch) => {
     dispatch(registerProductStart());
     try {
-      const response = await userRequest.post('products/admin/add', {title, description, image, category, size, color , price , inStock});
+      const response = await userRequest.post('products/admin/add', {title, description, image, category, size, price , inStock});
       // const response = await publicRequest.post('/products/admin/add', {title, discription, image, category, size, color , price , inStock});
       dispatch(registerProductSuccess(response.data));
     } catch (err) {
@@ -48,6 +48,18 @@ export const deleteProduct = (id) => {
       dispatch(deleteProductSuccess(response.message));
     } catch (err) {
       dispatch(deleteProductFailure());
+    }
+  };
+};
+export const updateProduct = (id) => {
+  return async (dispatch) => {
+    dispatch(updateProductStart());
+    try {
+      const response = await userRequest.put(`products/admin/update/${id}`);
+      // const response = await publicRequest.post('/products/admin/add', {title, discription, image, category, size, color , price , inStock});
+      dispatch(updateProductSuccess(response.message));
+    } catch (err) {
+      dispatch(updateProductFailure());
     }
   };
 };

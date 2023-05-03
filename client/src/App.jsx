@@ -13,6 +13,7 @@ import Navbar from './layout/Navbar';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import Team from './../src/components/Team/Team';
 import CreatProduct from './pages/CreateProduct';
+import UpdateProduct from './pages/UpdateProdcut';
 const App = () => {
   const user = useSelector((store) => store.auth.currentUser);
   return (
@@ -44,6 +45,9 @@ const App = () => {
       </Route>
       <Route path='/addAProduct'>
         <CreatProduct />
+      </Route>
+      <Route path='/update/:id'>
+        <UpdateProduct />
       </Route>
     </Switch>
     </Routes>

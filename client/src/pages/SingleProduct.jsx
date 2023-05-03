@@ -14,6 +14,7 @@ import Newsletter from "../components/Newsletter";
 import { deleteProduct } from "../store/auth-actions";
 import { useHistory } from 'react-router-dom';
 
+
 const SingleProduct = () => {
   const { id } = useParams();
   const history = useHistory();
@@ -23,6 +24,13 @@ const SingleProduct = () => {
   let [quantity, setQuantity] = useState(1);
   let [size, setSize] = useState("S");
   let [loginToAdd, setLoginToAdd] = useState(false);
+
+  const routeChange = () =>{ 
+    let path = `/update/${id}`; 
+    history.push(path);
+  }
+
+
   const getProduct = async () => {
     try {
       const url = `/products/${id}`;
@@ -129,7 +137,7 @@ const SingleProduct = () => {
                   <div>
                 {user1 ?  user1.user.isAdmin ?  (
           <button
-                  onClick={""}
+                  onClick={routeChange}
                   className="my-2 uppercase hover:bg-teal-700 hover:text-white transition ease-out duration-500 border-teal-700 border rounded p-4">
           Update {""} Item 
         </button>

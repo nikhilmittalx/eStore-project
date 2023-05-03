@@ -25,6 +25,7 @@ const productSchema = new Schema(
     },
     color: {
       type: Array,
+      default: []
     },
     price: {
       type: Number,

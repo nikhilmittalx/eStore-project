@@ -1,17 +1,18 @@
 import React, { useRef } from 'react';
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import { Avatar } from '@mui/material';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { addAProduct } from '../store/auth-actions';
-import Navbar from '../layout/Navbar';
-const CreatProduct = () => {
+import { updateProduct } from '../store/auth-actions';
+import { publicRequest } from '../request-methods';
+const UpdateProduct = () => {
+    const { id } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
   const auth = useSelector((store) => store.auth);
-
-  const [avatar, setAvatar] = useState("");
+  const [product, setProduct] = useState({});
+  const [avatar, setAvatar] = useState({});
   const [avatarPrev, setAvatarPrev] = useState("");
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -28,7 +29,18 @@ const CreatProduct = () => {
     };
   };
 
-
+  const getProduct = async () => {
+    try {
+      const url = `/products/${id}`;
+      const response = await publicRequest.get(url);
+      setProduct(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // useEffect(() => {
+  //   getProduct();
+  // }, []);
 
 
 
@@ -64,7 +76,7 @@ if( category == 'tshirts' || category == 'shirts'){
 let image = avatar
 
    
-    dispatch(addAProduct({title , description , image , category , sizee  , price , inStock}));
+    dispatch(updateProduct({title , description , image , category , sizee  , price , inStock}));
     history.push("/");
     titleRef.current.value = '';
   descriptionRef.current.value= '';
@@ -79,7 +91,7 @@ let image = avatar
 
     <div>
 
-     
+      getProduct()
 
     <div className='px-4 w-full h-screen flex justify-center items-center bg-cp bg-no-repeat bg-cover'>
      
@@ -88,7 +100,7 @@ let image = avatar
         action=''
         className='border bg-white p-6 flex flex-col items-center min-w-[17rem] sm:min-w-[22rem] md:min-w-[35rem] max-w-[25rem]'
       >
-        <h1 className='uppercase text-xl mb-4 font-bold'>Create A Product</h1>
+        <h1 className='uppercase text-xl mb-4 font-bold'>Update Product</h1>
           <div>
           <img
                 src={avatarPrev}
@@ -100,7 +112,7 @@ let image = avatar
                className='mb-4 bg-teal-700 text-white p-2'
                 type="file"
                 accept="image/*"
-             
+                
                 onChange={handleImageChange}
               />
 
@@ -115,6 +127,7 @@ let image = avatar
             className='block p-2 border-2 rounded focus:outline-none'
             type='text'
             placeholder='title'
+            value={product.title}
             ref={titleRef}
           />
          
@@ -125,6 +138,7 @@ let image = avatar
             className='block p-2 border-2 rounded focus:outline-none'
             type='text'
             placeholder='description'
+            value={product.description}
             ref={descriptionRef}
           />
         </div>
@@ -139,6 +153,7 @@ let image = avatar
             className='block p-2 border-2 rounded focus:outline-none'
             type='text'
             placeholder='category'
+            value={product.category}
             ref={categoryRef}
           />
         </div>
@@ -148,6 +163,7 @@ let image = avatar
             className='block p-2 border-2 rounded focus:outline-none'
             type='Number'
             placeholder='Price'
+            value={product.price}
             ref={priceRef}
           />
           
@@ -159,6 +175,7 @@ let image = avatar
             className='block p-2 border-2 rounded focus:outline-none'
             type='text'
             placeholder='Available in stock or not'
+            value={product.inStock}
             ref={inStockRef}
           />
         </div>
@@ -174,4 +191,4 @@ let image = avatar
   );
 };
 
-export default CreatProduct;
+export default UpdateProduct;
