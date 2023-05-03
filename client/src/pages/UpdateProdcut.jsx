@@ -38,30 +38,30 @@ const UpdateProduct = () => {
       console.log(error);
     }
   };
-  // useEffect(() => {
-  //   getProduct();
-  // }, []);
+  useEffect(() => {
+    getProduct();
+  }, []);
 
 
 
-  const titleRef = useRef();
-  const descriptionRef = useRef();
+  const [title , setTitle] = useState(product.title)
+  const [description , setDescription] = useState(product.description);
 
-  const categoryRef = useRef();
+  const [category , setCategory] = useState(product.category);
 
-  const priceRef = useRef();
-  const inStockRef = useRef();
+  const [price, setPrice] = useState(product.price)
+  const [inStock , setInStock] = useState(product.inStock);
   const formSubmitHandler = (e) => {
     e.preventDefault();
     // const firstname = firstnameRef.current.value;
     // const lastname = lastnameRef.current.value;
-    const title = titleRef.current.value;
-  const description = descriptionRef.current.value;
+  //   const title = titleRef.current.value;
+  // const description = descriptionRef.current.value;
  
-  const category = categoryRef.current.value;
+  // const category = categoryRef.current.value;
 
-  const price = priceRef.current.value;
-  const inStock = inStockRef.current.value;
+  // const price = priceRef.current.value;
+  // const inStock = inStockRef.current.value;
 
     let sizee = [];
 if( category == 'tshirts' || category == 'shirts'){
@@ -78,20 +78,13 @@ let image = avatar
    
     dispatch(updateProduct({title , description , image , category , sizee  , price , inStock}));
     history.push("/");
-    titleRef.current.value = '';
-  descriptionRef.current.value= '';
- 
-  categoryRef.current.value= '';
- 
- 
-  priceRef.current.value= '';
-   inStockRef.current.value= '';
+    
   };
   return (
 
     <div>
 
-      getProduct()
+     
 
     <div className='px-4 w-full h-screen flex justify-center items-center bg-cp bg-no-repeat bg-cover'>
      
@@ -128,7 +121,8 @@ let image = avatar
             type='text'
             placeholder='title'
             value={product.title}
-            ref={titleRef}
+            onChange={(e) => setTitle(e.target.value)}
+
           />
          
         </div>
@@ -139,7 +133,7 @@ let image = avatar
             type='text'
             placeholder='description'
             value={product.description}
-            ref={descriptionRef}
+           
           />
         </div>
         <div className='grid gap-4 md:grid-cols-2 mb-4'>
@@ -154,7 +148,7 @@ let image = avatar
             type='text'
             placeholder='category'
             value={product.category}
-            ref={categoryRef}
+          
           />
         </div>
         
@@ -164,7 +158,7 @@ let image = avatar
             type='Number'
             placeholder='Price'
             value={product.price}
-            ref={priceRef}
+         
           />
           
         </div>
@@ -176,7 +170,7 @@ let image = avatar
             type='text'
             placeholder='Available in stock or not'
             value={product.inStock}
-            ref={inStockRef}
+           
           />
         </div>
 
