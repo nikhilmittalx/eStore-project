@@ -1,5 +1,6 @@
 import { loginStart, loginSuccess, loginFailure, registerStart, registerSuccess, registerFailure, logoutStart, logoutSuccess, logoutFailure  } from './auth-slice';
-import { registerProductFailure , registerProductSuccess , registerProductStart, deleteProductStart , deleteProductSuccess , deleteProductFailure ,  updateProductFailure , updateProductStart , updateProductSuccess } from './admin-slice';
+import { registerProductFailure , registerProductSuccess , registerProductStart, deleteProductStart , deleteProductSuccess , deleteProductFailure } from './admin-slice';
+import {  updateProductFailure , updateProductStart , updateProductSuccess } from './product-slice'
 
 import { publicRequest, userRequest } from '../request-methods';
 

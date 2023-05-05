@@ -56,6 +56,6 @@ const adminSlice = createSlice({
   }
 });
 
-export const {  registerProductStart , registerProductSuccess , registerProductFailure, deleteProductStart , deleteProductSuccess , deleteProductFailure , updateProductFailure , updateProductStart , updateProductSuccess } = adminSlice.actions;
+export const {  registerProductStart , registerProductSuccess , registerProductFailure, deleteProductStart , deleteProductSuccess , deleteProductFailure  } = adminSlice.actions;
 
 export default adminSlice;

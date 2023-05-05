@@ -13,6 +13,7 @@ import Footer from "../layout/Footer";
 import Newsletter from "../components/Newsletter";
 import { deleteProduct } from "../store/auth-actions";
 import { useHistory } from 'react-router-dom';
+import { updateProductStart } from "../store/product-slice";
 
 
 const SingleProduct = () => {
@@ -25,10 +26,10 @@ const SingleProduct = () => {
   let [size, setSize] = useState("S");
   let [loginToAdd, setLoginToAdd] = useState(false);
 
-  const routeChange = () =>{ 
-    let path = `/update/${id}`; 
-    history.push(path);
-  }
+  // const routeChange = () =>{ 
+  //   let path = `/update/${id}`; 
+  //   history.push(path);
+  // }
 
 
   const getProduct = async () => {
@@ -45,6 +46,11 @@ const SingleProduct = () => {
   };
   const addToCartHandler = () => {
     dispatch(addProduct({ product, size, quantity }));
+  };
+  const productHandler = () => {
+    let path = `/update/${id}`; 
+    history.push(path);
+    dispatch(updateProductStart({ product}));
   };
   const toggleLoginToAdd = () => {
     setLoginToAdd(true)
@@ -137,7 +143,7 @@ const SingleProduct = () => {
                   <div>
                 {user1 ?  user1.user.isAdmin ?  (
           <button
-                  onClick={routeChange}
+                  onClick={ productHandler}
                   className="my-2 uppercase hover:bg-teal-700 hover:text-white transition ease-out duration-500 border-teal-700 border rounded p-4">
           Update {""} Item 
         </button>
