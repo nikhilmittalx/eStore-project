@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { updateProduct } from '../store/auth-actions';
+import { useParams } from 'react-router-dom';
 
 const UpdateProduct = () => {
 
   const dispatch = useDispatch();
+  const {id} = useParams();
   const history = useHistory();
   const auth = useSelector((store) => store.auth);
   
@@ -56,7 +58,7 @@ if( category == 'tshirts' || category == 'shirts'){
 let image = avatar
 
    
-    dispatch(updateProduct({title , description , image , category , sizee  , price , inStock}));
+    dispatch(updateProduct({id, title , description , image , category , sizee  , price , inStock}));
     history.push("/");
     
   };

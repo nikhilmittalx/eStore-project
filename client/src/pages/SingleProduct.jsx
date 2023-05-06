@@ -79,7 +79,7 @@ const SingleProduct = () => {
         <div className="grow">
           <h2 className="text-5xl mb-6">{product.title}</h2>
           <p className="mb-6 text-xl">{product.description}</p>
-          <span className="block mb-6 text-4xl">$ {product.price}</span>
+          <span className="block mb-6 text-4xl">₹{product.price}</span>
           <div className="grid sm:grid-cols-2 gap-4 mb-6">
             <div>
               <label htmlFor="" className="text-xl">

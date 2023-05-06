@@ -52,11 +52,11 @@ export const deleteProduct = (id) => {
     }
   };
 };
-export const updateProduct = (id) => {
+export const updateProduct = ({id, title , description , image , category , sizee  , price , inStock}) => {
   return async (dispatch) => {
     dispatch(updateProductStart());
     try {
-      const response = await userRequest.put(`products/admin/update/${id}`);
+      const response = await userRequest.put(`products/admin/update/${id}`,{title , description , image , category , sizee  , price , inStock} );
       // const response = await publicRequest.post('/products/admin/add', {title, discription, image, category, size, color , price , inStock});
       dispatch(updateProductSuccess(response.message));
     } catch (err) {
