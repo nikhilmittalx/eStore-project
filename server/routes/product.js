@@ -9,6 +9,7 @@ const router = express.Router();
 // router.post('/admin/add', addProduct);
 router.route("/admin/add").post(addProduct);
 router.route("/admin/delete/:id").delete(deleteProduct);
+router.route("/admin/update/:id").put(updateProduct);
 
 
 // PATCH => /api/products/:id

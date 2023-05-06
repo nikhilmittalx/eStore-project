@@ -9,8 +9,10 @@ const orderRoutes = require('./routes/order');
 const productRoutes = require('./routes/product');
 const authRoutes = require('./routes/auth');
 const stripeRoutes = require('./routes/stripe');
+const cloudinary = require("cloudinary")
 
-var cors=require("cors")
+
+var cors = require("cors")
 
 dotenv.config();
 
@@ -44,7 +46,7 @@ app.use((req, res) => {
   });
 });
 
-mongoose.connect(process.env.MONGO_URL ,{family:4})
+mongoose.connect(process.env.MONGO_URL, { family: 4 })
   .then(() => {
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {
@@ -55,3 +57,8 @@ mongoose.connect(process.env.MONGO_URL ,{family:4})
     console.log(error);
   });
 
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
