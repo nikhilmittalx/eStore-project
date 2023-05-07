@@ -1,22 +1,23 @@
-import React from 'react';
-import classes from './Team.module.css';
-import Sanyog from '../../assets/Team/Sanyog.png';
-import Saurabh from '../../assets/Team/Saurabh.png';
-import Sapna from '../../assets/Team/Sapna.png';
-import Announcement from '../../layout/Announcement';
-import Navbar from '../../layout/Navbar';
-import Navbarr from '../../layout/Navbarr';
+import React from "react";
+import classes from "./Team.module.css";
+import Sanyog from "../../assets/Team/Sanyog.png";
+import Saurabh from "../../assets/Team/Saurabh.png";
+import Sapna from "../../assets/Team/Sapna.png";
+import Announcement from "../../layout/Announcement";
+import Navbar from "../../layout/Navbar";
+import Navbarr from "../../layout/Navbarr";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Team = () => {
-	return (
-		<>
-			{/* <Announcement /> */}
-			<Navbarr />
-			<div className={classes.main}>
-				<div className={classes.item}>
-					<h1 className={classes.main_title}>The creative crew</h1>
-				</div>
-				{/* <div className={`${classes.item}  ${classes.right_section}`}>
+  return (
+    <>
+      {/* <Announcement /> */}
+      <Navbarr />
+      <div className={classes.main}>
+        <div className={classes.item}>
+          <h1 className={classes.main_title}>The creative crew</h1>
+        </div>
+        {/* <div className={`${classes.item}  ${classes.right_section}`}>
 					<h2 className={classes.secondary_title}>Who we are</h2>
 					<p className={classes.description}>
 						We are a team of creatively diverse, driven, innovative individuals
@@ -24,48 +25,91 @@ const Team = () => {
 						your dream job.
 					</p>
 				</div> */}
-			</div>
+      </div>
 
-			<div className={classes.team_members}>
+      <div className={classes.team_members}>
+        <div
+          // href="#"
+          target="_blank"
+          rel="noreferrer"
+          className={`${classes.team} ${classes.member_2}`}
+        >
+          <img
+            className={classes.img}
+            id={classes.img_4}
+            src={Saurabh}
+            alt="Nikhil"
+          />
+          {/* <span className={classes.position}>Grabby</span> */}
+          <p className={classes.name} style={{"fontSize":"20px", "margin-top":"4px"}}>Nikhil Mittal</p>
+          <p>FullStack Developer</p>
+          <a
+            id="profile-link"
+            href="https://github.com/nikhilmittalx"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Link to GitHub Profile"
+			style={{"fontSize":"22px"}}
+          >
+            {" "}
+            <i className="fab fa-github" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nikhil-mittal-a54903186/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Link to Linkedin Profile"
+			style={{"fontSize":"22px"}}
+          >
+            {" "}
+            <i className="fab fa-linkedin" />
+          </a>
+          {/* <p>
+            <i className="fab fa-github" /> icon
+          </p> */}
+        </div>
 
-				<a
-					href="#"
-					target="_blank"
-					rel="noreferrer"
-					className={`${classes.team} ${classes.member_2}`}
-				>
-					<img
-						className={classes.img}
-						id={classes.img_2}
-						src={Saurabh}
-						alt="Nikhil"
-					/>
-					{/* <span className={classes.position}>Grabby</span> */}
-					<p className={classes.name}>Nikhil Mittal</p>
-					<p >FullStack Developer</p>
-				</a>
-				<a
-					href="#"
-					target="_blank"
-					rel="noreferrer"
-					className={`${classes.team} ${classes.member_3}`}
-				>
-					<img
-						className={classes.img}
-						id={classes.img_3}
-						src={Saurabh}
-						alt="Shally"
-					/>
-					{/* <span className={classes.position}>ThunderBolt</span> */}
-					<p className={classes.name}>Shailendra Goyal</p>
-					<p>FullStack Developer</p>
-				</a>
-				
-				
-				
-			</div>
-		</>
-	);
+
+        <div
+          href="#"
+          target="_blank"
+          rel="noreferrer"
+          className={`${classes.team} ${classes.member_3}`}
+        >
+          <img
+            className={classes.img}
+            id={classes.img_2}
+            src={Saurabh}
+            alt="Shally"
+          />
+          {/* <span className={classes.position}>ThunderBolt</span> */}
+          <p className={classes.name} style={{"fontSize":"20px", "margin-top":"4px"}}>Shailendra Goyal</p>
+          <p>FullStack Developer</p>
+          <a
+            id="profile-link"
+            href="https://github.com/shailendrago100"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Link to GitHub Profile"
+			style={{"fontSize":"22px"}}
+          >
+            {" "}
+            <i className="fab fa-github" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/shailendrago100"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Link to Linkedin Profile"
+			style={{"fontSize":"22px"}}
+          >
+            {" "}
+            <i className="fab fa-linkedin" />
+          </a>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Team;
