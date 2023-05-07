@@ -28,11 +28,11 @@ export const register = ({firstname, lastname, username, email, password, passwo
     }
   };
 };
-export const addAProduct = ({title, description, image, category, size , price , inStock}) => {
+export const addAProduct = ({title, description, image, category, sizee , price , inStock}) => {
   return async (dispatch) => {
     dispatch(registerProductStart());
     try {
-      const response = await userRequest.post('products/admin/add', {title, description, image, category, size, price , inStock});
+      const response = await userRequest.post('products/admin/add', {title, description, image, category, sizee, price , inStock});
       // const response = await publicRequest.post('/products/admin/add', {title, discription, image, category, size, color , price , inStock});
       dispatch(registerProductSuccess(response.data));
     } catch (err) {

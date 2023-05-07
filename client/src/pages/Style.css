@@ -18,6 +18,7 @@
   } 
 .prodDetails{
     width: 14vmax;
+    /* height: 20vmax; */
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -28,6 +29,7 @@
 }
 .prodDetails > img{
     width: 14vmax;
+    height: 14vmax;
 }
 .prodDetails > p {
     font-family: Urbanist;

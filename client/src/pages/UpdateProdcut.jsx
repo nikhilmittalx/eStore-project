@@ -46,13 +46,15 @@ const [avatar, setAvatar] = useState(product.image);
   const formSubmitHandler = (e) => {
 
     let sizee = [];
-if( category == 'tshirts' || category == 'shirts'){
-  sizee = [XS , S , M , L , XL , XXL ]
-} else if ( category == 'shoes'){
-  sizee = [ 7 , 8 , 9 , 10 , 11 , 12];
-} else if (category == 'pants'){
-  sizee = [30 , 32 , 34 , 36 , 38 , 40 , 42 , 44];
-}
+    if (category == "tshirts") {
+      sizee = ["XS", "S", "M", "L", "XL", "XXL"];
+    } else if (category == "shoes") {
+      sizee = [7, 8, 9, 10, 11, 12];
+    } else if (category == "pants") {
+      sizee = [30, 32, 34, 36, 38, 40, 42, 44];
+    } else if (category == "shirts") {
+    sizee = ["XS", "S", "M", "L", "XL", "XXL"];
+    }
 
 
 let image = avatar

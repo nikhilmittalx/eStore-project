@@ -5,12 +5,13 @@ import Saurabh from '../../assets/Team/Saurabh.png';
 import Sapna from '../../assets/Team/Sapna.png';
 import Announcement from '../../layout/Announcement';
 import Navbar from '../../layout/Navbar';
+import Navbarr from '../../layout/Navbarr';
 
 const Team = () => {
 	return (
 		<>
 			{/* <Announcement /> */}
-			<Navbar />
+			<Navbarr />
 			<div className={classes.main}>
 				<div className={classes.item}>
 					<h1 className={classes.main_title}>The creative crew</h1>

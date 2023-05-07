@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Navbar from '../layout/Navbar';
+import Navbarr from '../layout/Navbarr';
 import Announcement from '../layout/Announcement';
 import Carousel from '../components/Carousel';
 import Categories from '../components/Categories';
@@ -11,8 +12,7 @@ import Footer from '../layout/Footer';
 const Home = () => {
   return (
     <>
-      
-      <Navbar />
+      <Navbarr />
       <Carousel />
       <Categories />
       <Products />

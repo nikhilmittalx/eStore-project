@@ -16,7 +16,7 @@ const Newsletter = () => {
         className='border rounded-lg overflow-hidden flex flex-nowrap'
       >
         <input
-          type='text'
+          type='email'
           placeholder='Your email'
           className='px-6 py-2 focus:outline-none'
         />

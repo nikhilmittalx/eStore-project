@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import Announcement from '../layout/Announcement';
 import Navbar from '../layout/Navbar';
+import Navbarr from '../layout/Navbarr';
 import Footer from '../layout/Footer';
 import Products from '../components/Products';
 import Newsletter from '../components/Newsletter';
@@ -15,7 +16,8 @@ const ShoppingCategorie = () => {
   return (
     <>
       {/* <Announcement /> */}
-      <Navbar />
+      {/* <Navbar /> */}
+      <Navbarr />
       <Title>{`${category.charAt(0).toUpperCase()}${category.slice(1)}`}</Title>
       <Products category={category} />
       <Newsletter />

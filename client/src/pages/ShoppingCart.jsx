@@ -10,6 +10,7 @@ import Navbar from '../layout/Navbar';
 import Announcement from '../layout/Announcement';
 import Footer from '../layout/Footer';
 import CartProduct from '../components/CartProduct';
+import Navbarr from '../layout/Navbarr';
 
 const ShoppingCart = () => {
   const [stripeToken, setStripeToken] = useState(null);
@@ -46,7 +47,7 @@ const ShoppingCart = () => {
   return (
     <>
       {/* <Announcement /> */}
-      <Navbar />
+      <Navbarr />
       <section className='px-8 py-4'>
         <h1 className='uppercase mt-4 mb-8 text-4xl text-center'>your bag</h1>
         <div className='grid sm:grid-cols-3 gap-4 md:gap-6 lg:gap-8'>

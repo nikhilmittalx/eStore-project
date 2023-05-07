@@ -14,7 +14,7 @@ import Newsletter from "../components/Newsletter";
 import { deleteProduct } from "../store/auth-actions";
 import { useHistory } from 'react-router-dom';
 import { updateProductStart } from "../store/product-slice";
-
+import Navbarr from '../layout/Navbarr';
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -67,7 +67,7 @@ const SingleProduct = () => {
   return (
     <>
       {/* <Announcement /> */}
-      <Navbar />
+      <Navbarr />
       <section className="p-8 grid md:grid-cols-2 gap-8">
         <div className="grow">
           <img
