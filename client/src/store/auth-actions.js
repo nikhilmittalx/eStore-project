@@ -17,11 +17,11 @@ export const login = ({email, password}) => {
     }
   };
 };
-export const register = ({firstname, lastname, username, email, password, passwordConfirm}) => {
+export const register = ({username, email, password, passwordConfirm}) => {
   return async (dispatch) => {
     dispatch(registerStart());
     try {
-      const response = await publicRequest.post('/auth/register', {firstname, lastname, username, email, password, passwordConfirm});
+      const response = await publicRequest.post('/auth/register', {username, email, password, passwordConfirm});
       dispatch(registerSuccess(response.data));
     } catch (err) {
       dispatch(registerFailure());

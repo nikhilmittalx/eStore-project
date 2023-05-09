@@ -8,8 +8,16 @@ const { sendToken } = require('../middlewares/verifyToken');
 
 module.exports.register = async (req, res, next) => {
   try {
-    const { username, email, password } = req.body;
+    const { username, email, password , passwordConfirm} = req.body;
     const isAdmin = req.body.isAdmin || false;
+
+    if(password != passwordConfirm){
+      return res
+      .status(500)
+      .json({ success: false, message: "Password Doesn't match" });
+      
+    }
+
     let payload = {
       username: username,
       email: email,

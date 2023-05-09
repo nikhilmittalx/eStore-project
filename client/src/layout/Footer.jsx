@@ -15,11 +15,13 @@ const Footer = () => {
           <a href=''>STYLEZONE</a>
         </h1>
         <p className='text-justify'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione
-          recusandae nobis sunt aliquid tempore vitae sapiente ea voluptatibus
-          ab repellat asperiores eius cum laboriosam facilis eos, maiores
-          deleniti nemo consequuntur assumenda sed consectetur culpa voluptatum
-          quisquam quibusdam? Saepe, soluta quibusdam.
+        Welcome to our fashion website, where you can find the latest trends, 
+        tips, and inspiration for all things fashion.Fashion is more than just clothes, 
+        it's a form of self-expression and a way to showcase your personality.
+         Whether you're looking for the perfect outfit for a special occasion or 
+         simply want to update your everyday wardrobe, we've got you covered.
+
+
         </p>
       </div>
       {/* <div>

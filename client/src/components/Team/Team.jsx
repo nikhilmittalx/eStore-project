@@ -7,7 +7,7 @@ import Announcement from "../../layout/Announcement";
 import Navbar from "../../layout/Navbar";
 import Navbarr from "../../layout/Navbarr";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-
+import Footer from "../../layout/Footer"
 const Team = () => {
   return (
     <>
@@ -108,6 +108,7 @@ const Team = () => {
           </a>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

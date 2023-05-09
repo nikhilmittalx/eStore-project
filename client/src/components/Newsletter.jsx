@@ -9,7 +9,7 @@ const Newsletter = () => {
         Newsletter
       </h2>
       <p className='text-2xl mb-10 text-center'>
-        Get timely updates from your favorite products
+        Get timely updates from StyleZone
       </p>
       <form
         action=''
