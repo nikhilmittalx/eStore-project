@@ -71,11 +71,12 @@ const ShoppingCart = () => {
               name='HEIN.'
               billingAddress
               shippingAddress
-              description={`Your total is ${cart.totalPrice}`}
+              description={`Your total is ₹${cart.totalPrice}`}
               amount={cart.totalPrice * 100}
-              currency='USD'
+              currency='RUPEES'
               token={onToken}
-              stripeKey='pk_test_51LbSFeDby8a9HLcBzbuGETbDJiWZkCbNQx3gSpAfRZIKSrvsKakFGjvkNPTvzuHNNXKDYojDjdk3XhLlTajrQmeZ00JSyq9AOO'
+
+              stripeKey="pk_test_51N7EnVSJUyeR6wOe8BNiyMatIQYdnB8ufkecTJBxqrrwkAJMXDUxcsNlUwthV2YZswAKHnX8dBrkUNSVsEcvKcDG00UcGcX6Ll"
             >
               <a className='text-sm lg:text-md cursor-pointer uppercase block p-4 border-2 hover:text-black hover:border-black hover:bg-white bg-black text-white transition ease-out duration-500'>
                 checkout now
@@ -96,21 +97,21 @@ const ShoppingCart = () => {
                 <span className='capitalize'>subtotal</span>
                 <span>
                 {/* $ {cart.totalPrice} */}
-                {totalAmount}
+                ₹{totalAmount}
                 </span>
               </div>
               <div className='flex justify-between mb-8'>
                 <span className='capitalize'>estimated shipping</span>
-                <span>$ 00.00</span>
+                <span>₹ 00.00</span>
               </div>
               <div className='flex justify-between mb-8'>
                 <span className='capitalize'>shipping discount</span>
-                <span>-$ 00.00</span>
+                <span>-₹ 00.00</span>
               </div>
               <div className='flex justify-between mb-8'>
                 <span className='capitalize font-bold text-2xl'>Total</span>
                 <span className='font-bold text-2xl'>
-                  {totalAmount}
+                ₹{totalAmount}
                 </span>
               </div>
             </div>

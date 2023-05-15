@@ -8,25 +8,25 @@ const Categories = () => {
       <div className='grid gap-2 md:grid-cols-3 mb-2'>
         <Categorie
           name='tshirt'
-          image='https://picsum.photos/id/221/640/480'
+          image='https://res.cloudinary.com/doqgoey64/image/upload/v1683624820/products-estore/tshirt_upwfwa.jpg'
         />
         <Categorie
-          name='shoes'
-          image='https://res.cloudinary.com/diyixgmes/image/upload/v1683619950/NIKE_Men_s_Dunk_High_Pro_SB_305050_373_Pine_Green_Metallic_Gold_Sneaker_nkrzht.jpg'
+          name='Shoes'
+          image='https://res.cloudinary.com/doqgoey64/image/upload/v1683624429/products-estore/1_vfslhp.jpg'
         />
         <Categorie
           name='jeans'
-          image='https://picsum.photos/id/271/640/480'
+          image='https://res.cloudinary.com/doqgoey64/image/upload/v1683625077/products-estore/images_qujlv0.jpg'
         />
       </div>
       <div className='grid gap-2 md:grid-cols-2'>
         <Categorie
           name='hoodies'
-          image='https://picsum.photos/id/214/640/480'
+          image='https://res.cloudinary.com/doqgoey64/image/upload/v1683625218/products-estore/Anti-Village-Black-Hoodie-1_sdzlcd.jpg'
         />
         <Categorie
-          name='others'
-          image='https://res.cloudinary.com/diyixgmes/image/upload/v1683619951/Titan_Analog_Black_Dial_Men_s_Watch_hdxd4p.jpg'
+          name='Others'
+          image='https://res.cloudinary.com/doqgoey64/image/upload/v1683625377/products-estore/images_1_nfk6hi.jpg'
         />
       </div>
     </section>

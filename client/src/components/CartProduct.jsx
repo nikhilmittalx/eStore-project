@@ -8,7 +8,7 @@ const CartProduct = ({ product }) => {
   // const [product, setProduct] = useState({});
   // const getProduct = async () => {
   //   try {
-  //     const url = `/products/${id}`;
+  //     const url = `/products/₹{id}`;
   //     const response = await publicRequest.get(url);
   //     setProduct(response.data);
   //   } catch (error) {
@@ -62,7 +62,7 @@ const CartProduct = ({ product }) => {
           </span>
         </div>
         <span className="block mb-6 text-4xl">
-          $ {product.quantity * product.price}
+          ₹ {product.quantity * product.price}
         </span>
       </div>
     </div>
