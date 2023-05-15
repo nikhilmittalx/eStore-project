@@ -7,26 +7,26 @@ const Categories = () => {
     <section className='containCat' id='categories'>
       <div className='grid gap-2 md:grid-cols-3 mb-2'>
         <Categorie
-          name='Clothes'
-          image='https://picsum.photos/id/221/640/480'
+          name='tshirt'
+          image='https://res.cloudinary.com/doqgoey64/image/upload/v1683624820/products-estore/tshirt_upwfwa.jpg'
         />
         <Categorie
           name='Shoes'
-          image='https://picsum.photos/id/21/640/480'
+          image='https://res.cloudinary.com/doqgoey64/image/upload/v1683624429/products-estore/1_vfslhp.jpg'
         />
         <Categorie
-          name='Electronics'
-          image='https://picsum.photos/id/271/640/480'
+          name='jeans'
+          image='https://res.cloudinary.com/doqgoey64/image/upload/v1683625077/products-estore/images_qujlv0.jpg'
         />
       </div>
       <div className='grid gap-2 md:grid-cols-2'>
         <Categorie
-          name='Furniture'
-          image='https://picsum.photos/id/214/640/480'
+          name='hoodies'
+          image='https://res.cloudinary.com/doqgoey64/image/upload/v1683625218/products-estore/Anti-Village-Black-Hoodie-1_sdzlcd.jpg'
         />
         <Categorie
           name='Others'
-          image='https://picsum.photos/id/291/640/480'
+          image='https://res.cloudinary.com/doqgoey64/image/upload/v1683625377/products-estore/images_1_nfk6hi.jpg'
         />
       </div>
     </section>
