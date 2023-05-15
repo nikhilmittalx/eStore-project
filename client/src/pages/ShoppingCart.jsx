@@ -67,6 +67,7 @@ const ShoppingCart = () => {
             {/* <a className='underline cursor-pointer'>Your Wishlist (0)</a> */}
           </div>
           <div>
+         
             <StripeCheckout
               name='STYLEZONE'
               billingAddress
@@ -75,13 +76,14 @@ const ShoppingCart = () => {
               amount={totalAmount * 100}
               currency='RUPEES'
               token={onToken}
-
+              disabled={totalAmount == 0}
               stripeKey="pk_test_51N7EnVSJUyeR6wOe8BNiyMatIQYdnB8ufkecTJBxqrrwkAJMXDUxcsNlUwthV2YZswAKHnX8dBrkUNSVsEcvKcDG00UcGcX6Ll"
             >
               <a className='text-sm lg:text-md cursor-pointer uppercase block p-4 border-2 hover:text-black hover:border-black hover:bg-white bg-black text-white transition ease-out duration-500'>
                 checkout now
               </a>
             </StripeCheckout>
+         
           </div>
         </div>
         <div className='my-12 grid gap-8 lg:grid-cols-[2fr_1fr]'>
