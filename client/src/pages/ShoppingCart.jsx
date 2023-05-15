@@ -35,14 +35,14 @@ const ShoppingCart = () => {
       try {
         await userRequest.post('/checkout', {
           tokenId: stripeToken.id,
-          amount: cart.totalPrice * 100,
+          amount: totalAmount * 100,
         });
         history.push('/orders');
       } catch (err) {
         console.log(err);
       }
     };
-    stripeToken && cart.totalPrice > 1 && checkout();
+    stripeToken && totalAmount > 1 && checkout();
   }, [stripeToken]);
   return (
     <>
@@ -71,8 +71,8 @@ const ShoppingCart = () => {
               name='STYLEZONE'
               billingAddress
               shippingAddress
-              description={`Your total is ₹${cart.totalPrice}`}
-              amount={cart.totalPrice * 100}
+              description={`Your total is ₹${totalAmount}`}
+              amount={totalAmount * 100}
               currency='RUPEES'
               token={onToken}
 
