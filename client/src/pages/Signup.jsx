@@ -38,9 +38,9 @@ const Signup = () => {
     if(auth.error){
       history.push("/signup");
     }
-    else {
-      history.push("/");
-    }
+    // else {
+    //   history.push("/");
+    // }
 
   } , [history])
 

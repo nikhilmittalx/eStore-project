@@ -33,7 +33,7 @@ const Products = ({ category, filter }) => {
       className='contain'
       id='products'
     >
-      {console.log(products)}
+      {/* {console.log(products)} */}
       {products.map((product) => (
        
         <Product key={product._id} image={product.image} id={product._id} price={product.price}  title =  {product.title}/>
