@@ -41,7 +41,7 @@ const Team = () => {
             alt="Nikhil"
           />
           {/* <span className={classes.position}>Grabby</span> */}
-          <p className={classes.name} style={{"fontSize":"20px", "margin-top":"4px"}}>Nikhil Mittal</p>
+          <p className={classes.name} style={{"fontSize":"20px", "marginTop":"4px"}}>Nikhil Mittal</p>
           <p>FullStack Developer</p>
           <a
             id="profile-link"
@@ -83,7 +83,7 @@ const Team = () => {
             alt="Shally"
           />
           {/* <span className={classes.position}>ThunderBolt</span> */}
-          <p className={classes.name} style={{"fontSize":"20px", "margin-top":"4px"}}>Shailendra Goyal</p>
+          <p className={classes.name} style={{"fontSize":"20px", "marginTop":"4px"}}>Shailendra Goyal</p>
           <p>FullStack Developer</p>
           <a
             id="profile-link"

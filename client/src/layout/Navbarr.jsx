@@ -32,10 +32,11 @@ function OffcanvasExample() {
           bg="light"
           expand={expand}
           className="mb-0"
-          style={{ "background-color": "white", "height": "70px" }}
+          style={{ "backgroundColor": "white", "height": "70px" }}
+          
         >
           <Container fluid>
-            <Navbar.Brand href="/" style={{ "margin-left": "2.5vw", "fontSize":"28px", "font-weight":"550"}}>StyleZone</Navbar.Brand>
+            <Navbar.Brand href="/" style={{ "marginLeft": "2.5vw", "fontSize":"28px", "fontWeight":"550"  }}>StyleZone</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -84,7 +85,7 @@ function OffcanvasExample() {
                   )}
 
                   {user1 ? (
-                    <div style={{ "margin-left":"20px" }}>
+                    <div style={{ "marginLeft":"20px" }}>
                     <Link to="/cart">
                       <Badge
                         badgeContent={totalQuantity}
